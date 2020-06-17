@@ -1,0 +1,35 @@
+[ec2-user@ip-10-1-10-70 ~]$ sudo yum update
+[ec2-user@ip-10-1-10-70 ~]$ sudo yum install mysql
+[ec2-user@ip-10-1-10-70 ~]$ mysql -h udacity.cgd8ysvwptdc.ca-central-1.rds.amazonaws.com -u admin -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 75
+Server version: 8.0.19 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity;
+Database changed
+
+MySQL [udacity]> CREATE TABLE customer (id int NOT NULL AUTO_INCREMENT, data varchar(50), PRIMARY KEY (id));
+Query OK, 0 rows affected (0.03 sec)
+
+MySQL [udacity]> SELEcT * FROM customers;
+ERROR 1146 (42S02): Table 'udacity.customers' doesn't exist
+MySQL [udacity]> SELEcT * FROM customer;
+Empty set (0.00 sec)
+
+MySQL [udacity]> INSERT INTO customer (`data`) VALUES ('ok');
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [udacity]> SELEcT * FROM customer;
++----+------+
+| id | data |
++----+------+
+|  1 | ok   |
++----+------+
+1 row in set (0.00 sec)
+
+MySQL [udacity]> 

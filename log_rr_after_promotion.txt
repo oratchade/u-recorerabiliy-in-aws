@@ -1,0 +1,12 @@
+mysql> INSERT INTO customer (`data`) VALUES ('ok now as promote');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELEcT * FROM customer;
++----+-------------------+
+| id | data              |
++----+-------------------+
+|  1 | ok                |
+|  2 | ok now as promote |
++----+-------------------+
+2 rows in set (0.00 sec)
+
